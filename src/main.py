@@ -46,7 +46,7 @@ if settings.ENVIRONMENT.is_deployed:
     )
 
 
-@app.get("/healthcheck", include_in_schema=False)
+@app.get("/healthcheck", include_in_schema=True)
 async def healthcheck() -> dict[str, str]:
     return {"status": "ok"}
 

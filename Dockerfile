@@ -12,7 +12,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 COPY requirements/ /tmp/requirements
 
 RUN pip install -U pip && \
-    pip install --no-cache-dir -r /tmp/requirements/dev.txt
+    pip install --no-cache-dir -r /tmp/requirements/dev.txt \
+    pip install debugpy
 
 COPY . /src
 ENV PATH "$PATH:/src/scripts"

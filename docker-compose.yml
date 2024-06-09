@@ -13,6 +13,7 @@ services:
       - ./:/src
     ports:
       - "16000:8000"
+      - 5678:5678
     depends_on:
       - app_db
 

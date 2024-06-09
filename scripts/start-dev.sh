@@ -14,4 +14,6 @@ LOG_LEVEL=${LOG_LEVEL:-info}
 LOG_CONFIG=${LOG_CONFIG:-/src/logging.ini}
 
 # Start Uvicorn with live reload
-exec uvicorn --reload --proxy-headers --host $HOST --port $PORT --log-config $LOG_CONFIG "$APP_MODULE"
+# exec uvicorn --reload --proxy-headers --host $HOST --port $PORT --log-config $LOG_CONFIG "$APP_MODULE"
+exec python -m debugpy --wait-for-client --listen 0.0.0.0:5678 -m uvicorn --reload --proxy-headers --host $HOST --port $PORT --log-config $LOG_CONFIG "$APP_MODULE"
+# python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 -m uvicorn hello_world.main:app --host 0.0.0.0 --port 8000 --reload"]
