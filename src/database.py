@@ -37,6 +37,7 @@ auth_user = Table(
     Column("is_admin", Boolean, server_default="false", nullable=False),
     Column("created_at", DateTime, server_default=func.now(), nullable=False),
     Column("updated_at", DateTime, onupdate=func.now()),
+    Column("deleted_at", DateTime, onupdate=func.now()),
 )
 
 refresh_tokens = Table(

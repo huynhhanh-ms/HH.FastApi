@@ -14,6 +14,13 @@ python -m venv environment_packages
 environment_packages\Scripts\activate  
 
 pip install -r requirements\dev.txt
+
+alembic history
+
+docker compose exec app makemigrations "add deleted_at"
+docker compose exec app migrate 
+
+
 ```
 
 
